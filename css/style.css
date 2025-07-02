@@ -1,0 +1,173 @@
+@import url(./reset.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Eczar", serif;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #de5073;
+  margin-bottom: 10px;
+}
+
+.form {
+  font-weight: 600;
+  border: none;
+  min-width: 380px;
+  padding: 20px 30px;
+  border-radius: 8px;
+  background: linear-gradient(205deg, #de5073, #ffd6e0);
+  box-shadow: 3px 4px 9px 4px #a03d5f;
+}
+
+.form__info .form__label,
+.form__age .form__label {
+  margin-bottom: 5px;
+}
+
+.form__input,
+.form__select,
+.form__textarea,
+.form__gender .form__label {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #de5073;
+}
+
+.form__gender {
+  display: flex;
+  gap: 5vw;
+  justify-content:space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form__gender .form__label,
+.form__check .form__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form__gender .form__input,
+.form__check .form__input {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0;
+  z-index: 2;
+}
+
+.form__gender .form__input {
+  right: 0;
+}
+
+.gender__check,
+.consent__check {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 1px solid #de5073;
+}
+
+.gender__check {
+  border-radius: 50%;
+}
+
+.form__gender .form__input:checked + .gender__check::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #de5073;
+  border-radius: 50%;
+}
+
+.form__course,
+.form__address {
+  gap: 5px;
+}
+
+.form__check {
+  margin-bottom: 10px;
+}
+
+.form__check .form__input {
+  left: 0;
+}
+
+.form__check .form__input:checked + .consent__check::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 8px;
+  height: 14px;
+  border: solid #de5073;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.form__btn {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.clear__btn,
+.submit__btn {
+  height: 42px;
+  width: 102px;
+  border-radius: 4px;
+  font-family: "Eczar", serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid #de5073;
+  background-color: #ffffff;
+}
+
+.clear__btn:hover,
+.submit__btn:hover {
+  color: #ffffff;
+  background-color: #de5073;
+}
